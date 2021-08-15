@@ -1,0 +1,80 @@
+
+.header-about{
+     width: 100%;
+     background-image: radial-gradient(at 25% top, #0b2d44 0%, #0a1526 40%);
+     z-index: 0;
+     font-family: 'Source Sans Pro', sans-serif;
+}
+.gradient {
+     background:no-repeat url(../../assets/imeges/red_pipes-594140f35efb300741add9827cc4f41053b0a4bb7ba249a40375377cc9d22d47.svg);
+     
+}
+.header-content h2{
+     height: 233px;
+     line-height: 233px;
+     font-family: 'Shrikhand', cursive;
+     font-size: 7em;
+     font-weight: 400;
+     position: relative;
+     top: 0;
+     left: 0;
+}
+.header-content img{
+     position: relative;
+     z-index: 3;
+}
+.header-content h3{
+     font-size: 4em;
+     margin-top: 40px;
+     margin-bottom: 20px;
+     font-weight: 700;
+}
+.header-content p{
+     position: relative;
+     font-size: 1.5em;
+     z-index: 3;
+}
+.header-content h4{
+     font-size: 2em;
+     font-weight: 700;
+}
+.wrapper span{
+     color: #a10634;
+     font-weight: 700;
+     font-size: 4em;
+     line-height: 0.8em;
+     width: 8vw;
+}
+.wrapper p{
+     margin: 5px 0;
+     font-size: 1.5rem;
+     font-weight: 600;
+     
+}
+.btn{
+     border-radius: 9px;
+     font-size: 25px;
+     font-weight: bold;
+     color: #a10634 ;
+     background-color: #fff;
+}
+.btn:hover{
+     background-color: #a10634;
+     color: #fff;
+}
+@media screen and (max-width:991px) {
+
+     .header-content img{
+          display: none;
+     }
+     .header-content h2{
+
+          line-height: 100px;
+          font-family: 'Shrikhand', cursive;
+          font-size: 7em;
+          font-weight: 400;
+          position: relative;
+          top: 0;
+          left: 0;
+     }
+}

@@ -1,0 +1,18 @@
+<div class="container pt-4">
+     <div class="row pt-5">
+          <div class="col-md-5">
+               <img class="w-100" [src]="imgPrefix + tvDetails.poster_path" [alt]="tvDetails.name">
+          </div>
+          <div class="col-md-7">
+               <h1 class="h3">{{tvDetails.name}}</h1>
+               <p class="pb-2 text-muted">{{tvDetails.original_name}}</p>
+               <span class="btn btn-info mx-2 p-1" *ngFor="let name of tvDetails.genres">{{name.name}}</span>
+               <h3 class="h6 py-3">Vote : {{tvDetails.vote_average}}</h3>
+               <h3 class="h6 py-3">Vote Count : {{tvDetails.vote_count}}</h3>
+               <h3 class="h6 py-3">Popularity : {{tvDetails.popularity}}</h3>
+               <h3 class="h6 py-3">Release Data : {{tvDetails.last_air_date}}</h3>
+               <p class="h5 text-muted">{{tvDetails.overview}}</p>
+
+          </div>
+     </div>
+</div>

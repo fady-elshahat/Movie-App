@@ -1,0 +1,27 @@
+<div class="movies pt-5">
+     <div class="container my-5">
+          <div class="content-movie text-center w-50 m-auto">
+               <div class="line w-75 mx-auto mb-4"></div>
+               <h2>Popular Movies</h2>
+               <p class="text-muted">Most Watched Movies by day</p>
+               <div class="line w-75 mx-auto mb-4"></div>
+          </div>
+          <div class="row">
+               <div *ngFor="let movie of allMovie " class="content text-center col-md-3">
+                    <div class="movie position-relative">
+                         <a [routerLink]="['/movieDetails' , movie.id]">
+                              <img [src]="imgPrefix + movie.poster_path" class="w-100 py-3" [alt]="movie.title">
+                              <h2 class="h6">{{movie.title}}</h2>
+                         </a>
+                         <h2 class="text-left h6">Language : {{movie.original_language}}</h2>
+                         <p class=" text-muted text-left">{{movie.release_date}} </p>
+                         <span class="text-muted text-right"></span>
+                         <div class="vote bg-info">
+                              <span>{{movie.vote_average}}</span>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="container py-5">
+     <div class="registra w-75 m-auto py-3">
+          <div *ngIf="error" class="alert-danger py-2 alert">
+               <h2>{{error}}</h2>
+          </div>
+          <form [formGroup]="registraForm" (ngSubmit)="registraFormSubmit(registraForm)">
+               <div class="form-group">
+                    <label for="firstName">firstName</label>
+                    <input formControlName="first_name" type="text" id="firstName" class="form-control"/>
+                    <div *ngIf='registraForm.get("first_name")?.errors !=null && registraForm.get("first_name")?.touched' class=" my-1 text-danger">
+                         <p *ngIf='registraForm.get("first_name")?.errors?.required'>First Name is Required</p>
+                         <p *ngIf='registraForm.get("first_name")?.errors?.minlength'>First Name is Min lenght 4</p>
+                         <p *ngIf='registraForm.get("first_name")?.errors?.maxlength'>First Name is Max lenght 10</p>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label for="lastName">lastName</label>
+                    <input formControlName="last_name" type="text" id="lastName" class="form-control" />
+                    <div *ngIf='registraForm.get("last_name")?.errors !=null && registraForm.get("last_name")?.touched' class="my-1 text-danger">
+                         <p *ngIf='registraForm.get("last_name")?.errors?.required'>Last Name is Required</p>
+                         <p *ngIf='registraForm.get("last_name")?.errors?.minLength'>Last Name is Min lenght 4</p>
+                         <p *ngIf='registraForm.get("last_name")?.errors?.maxlenght'>First Name is Max lenght 10</p>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label for="Age">Age</label>
+                    <input formControlName="age" type="text" id="Age" class="form-control" />
+                    <div *ngIf='registraForm.get("age")?.errors !=null && registraForm.get("age")?.touched' class="text-danger">
+                         <p *ngIf='registraForm.get("age")?.errors?.required'>Age is Required</p>
+                         <p *ngIf='registraForm.get("age")?.errors?.min'>Age is Min 16 y</p>
+                         <p *ngIf='registraForm.get("age")?.errors?.max'>Age is Max 70 y</p>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input formControlName="email" type="email" id="Email" class="form-control" />
+                    <div *ngIf='registraForm.get("email")?.errors !=null && registraForm.get("email")?.touched' class="text-danger my-1">
+                         <p *ngIf='registraForm.get("email")?.errors?.required'>Email is Required</p>
+                         <p *ngIf='registraForm.get("email")?.errors?.email'>Email is Not Valid</p>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input formControlName="password" type="password" id="Password" class="form-control" />
+                    <button (click)="eyePass()" type="button" id="eye"><i class="fas fa-eye"></i></button>
+                    <div *ngIf='registraForm.get("password")?.errors != null && registraForm.get("password")?.touched' class="text-danger my-1">
+                         <p *ngIf='registraForm.get("password")?.errors?.required'>Password is Required</p>
+                         <p *ngIf='registraForm.get("password")?.errors?.minlength'>Password is Minlenght 6</p>
+                         <p *ngIf='registraForm.get("password")?.errors?.maxlenght'>Password is Maxlenght 10</p>
+                    </div>
+               </div>
+               <button [disabled]='registraForm.invalid' type="submit" class="btn btn-info">
+                    Registra
+                    <i class="fas fa-paper-plane text-white"></i>
+               </button>
+          </form>
+     </div>
+</div>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg w-100 (scroll)='navScroll()'">
+      <a class="navbar-brand" routerLink="main">
+        <i class="fas fa-video pr-3"></i>NOXE
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="text-white fas fa-bars"></i>
+      </button>
+    <div class="collapse navbar-collapse row justify-content-end text-center" id="navbarSupportedContent">
+      <div class="col-md-6">
+      
+        <ul class="navbar-nav">
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a *ngIf="islogin" class="nav-link" routerLink="home" (click)="ToggleNavBar()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="islogin" class="nav-link" routerLink="about" (click)="ToggleNavBar()">About</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="islogin" class="nav-link" routerLink="tv" (click)="ToggleNavBar()">TV Show</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="islogin" class="nav-link" routerLink="movies" (click)="ToggleNavBar()">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="islogin" class="nav-link" routerLink="people" (click)="ToggleNavBar()">People</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="islogin" class="nav-link" routerLink="network" (click)="ToggleNavBar()">Network</a>
+          </li>
+      </ul>
+      </div>    
+    <ul class="navbar-nav social">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="main">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="main">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="main">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  </ul>
+  <ul class="navbar-nav login">
+    <li class="nav-item">
+      <a *ngIf="!islogin" class="nav-link" routerLink="registration">Registr</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="!islogin" class="nav-link" routerLink="login">Login</a>
+    </li>
+    <li class="nav-item">
+      <a  *ngIf="islogin" class="nav-link" routerLink="main"(click)="isloguot()" >Loguot</a>
+    </li>
+    <li class="nav-item">
+      <a  *ngIf="islogin" class="nav-link">{{user.value.first_name}} {{user.value.last_name}}</a>
+    </li>
+  </ul>
+    </div>
+</nav>

@@ -1,0 +1,83 @@
+<app-homeheader [treindgMovie] = treindgMovie></app-homeheader>
+<div class="container">
+     <div class="serach-title d-flex justify-content-center text-center mt-5 flex-column">
+          <h2>Welcome.</h2>
+          <p>Millions of movies, TV shows and people to discover. <span>Explore now.</span></p>
+     </div>
+     <div class="wrapper">
+          <div class="search-input">
+               <input class="search_input" type="text" [(ngModel)]='term' (keyup)="searchItem()" placeholder="Search" >
+               <div *ngFor="let res of searchDet" class="autocomplet-box">
+                    <li>
+                         <a  [routerLink]="['/movieDetails' , res.id]">
+                              {{res.name}} {{res.title}}
+                         </a>
+                    </li>
+               </div>
+               <div class="icon"><i class=" fas fas fa-search"></i></div>
+          </div>
+          
+     </div>
+     <div class="row py-5">
+          <div class="col-md-4 d-flex align-items-center">
+               <div class="titel-trending">
+                    <div class="line w-25 mb-4"></div>
+                    <h1 class="h4">Trending Movies<br>to Watch Right Now</h1>
+                    <p class="text-muted">Most Watched Movies by day</p>
+                    <div class="line w-75 my-4"></div>
+               </div>
+          </div>
+          <div *ngFor="let movie of treindgMovie " class="content text-center col-md-2">
+               <div class="movie position-relative">
+                    <a [routerLink]="['/movieDetails' , movie.id]">
+                         <img [src]="imgPrefix + movie.poster_path" class="w-100 py-3" [alt]="movie.title">
+                         <h2 class="h6">{{movie.title}}</h2>
+                    </a>
+                    <div class="vote bg-info">
+                         <span>{{movie.vote_average}}</span>
+                         
+                    </div>
+               </div>
+               
+          </div>
+     </div>
+     <div class="line w-100 my-4"></div>
+     <div class="row py-5">
+          <div class="col-md-4 d-flex align-items-center">
+               <div class="titel-trending">
+                    <div class="line w-25 mb-4"></div>
+                    <h1 class="h4">Trending Tv Show <br> to Watch Right Now</h1>
+                    <p class="text-muted">Most Watched Tv Show by day</p>
+                    <div class="line w-75 my-4"></div>
+               </div>
+          </div>
+          <div *ngFor="let tv of treindgTv " class="content text-center col-md-2">
+               <div class="tv position-relative">
+                    <a [routerLink]="['/tvDetails', tv.id]">
+                         <img [src]="imgPrefix + tv.poster_path" class="w-100 py-3" [alt]="tv.name">
+                         <h2 class="h6">{{tv.name}}</h2>
+                    </a>
+                    <div class="vote bg-info">
+                         <span>{{tv.vote_average}}</span>
+                    </div>
+               </div>
+          </div>
+     </div>
+     
+     <div class="row py-5">
+          <div class="col-md-4 d-flex align-items-center">
+               <div class="titel-trending">
+                    <div class="line w-25 mb-4"></div>
+                    <h1 class="h4">Trending People <br> to Watch Right Now</h1>
+                    <p class="text-muted">Most Watched People by day</p>
+                    <div class="line w-75 my-4"></div>
+               </div>
+          </div>
+          <div *ngFor="let person of treindgPerson" class="content text-center col-md-2">
+               <a [routerLink]="['/personDetails', person.id ]">
+                    <img [src]="imgPrefix + person.profile_path" class="w-100 py-3" [alt]="person.name">
+                    <h2 class="h6">{{person.name}}</h2>
+               </a>
+          </div>
+     </div>
+</div>

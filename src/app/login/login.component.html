@@ -1,0 +1,32 @@
+<div class="container py-5">
+     <div class="login w-75 m-auto py-3">
+          <form [formGroup]="loginForm" (ngSubmit)="loginFormSubmit(loginForm)">
+               <div class="form-group">
+                    <label for="emailLogin">Email</label>
+                    <input formControlName="email" id="emailLogin" type="text" class="form-control">
+                    <div *ngIf='loginForm.get("email")?.errors !=null && loginForm.get("email")?.touched' class="text-danger my-1">
+                         <p *ngIf='loginForm.get("email")?.errors?.required'>Email is Required</p>
+                         <p *ngIf='loginForm.get("email")?.errors?.email'>Email is Not Valid</p>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label for="passwordLogin">Password</label>
+                    <input formControlName="password" id="passwordLogin" type="password" class="form-control">
+                    <button (click)="eyePass()" type="button" id="eye"><i class="fas fa-eye"></i></button>
+                    <div *ngIf='loginForm.get("password")?.errors != null && loginForm.get("password")?.touched' class="text-danger my-1">
+                         <p *ngIf='loginForm.get("password")?.errors?.required'>Password is Required</p>
+                         <p *ngIf='loginForm.get("password")?.errors?.minlength'>Password is Minlenght 6</p>
+                         <p *ngIf='loginForm.get("password")?.errors?.maxlenght'>Password is Maxlenght 10</p>
+                    </div>
+               </div>
+               <button [disabled]='loginForm.invalid' type="submit" class="btn btn-info">
+                    Login
+                    <i class="fas fa-paper-plane text-white"></i>
+               </button>
+          </form>
+          
+          <div *ngIf="error" class="text-danger my-2 alert">
+               <h2>{{error}}</h2>
+          </div>    
+     </div>
+</div>

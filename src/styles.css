@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+     background-color: #131722;
+     font-family: 'Montserrat Alternates', sans-serif;
+     color: #fff;
+     scroll-behavior: smooth;
+}
+a{
+     text-decoration: none;
+     color: #fff;
+     font-size: 19px;
+}
+a:hover{
+     color: #09c;
+     text-decoration: none;
+     transition: .3s;
+}

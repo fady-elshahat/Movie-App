@@ -1,0 +1,26 @@
+<div class="movies pt-5">
+     <div class="container my-5">
+          <div class="content-movie text-center w-50 m-auto">
+               <div class="line w-75 mx-auto mb-4"></div>
+               <h2>Popular PEOPLE</h2>
+               <p class="text-muted">Most Watched people by day</p>
+               <div class="line w-75 mx-auto mb-4"></div>
+          </div>
+          <div class="row">
+               <div *ngFor="let tv of allPeople " class="content text-center col-md-3">
+                    <div class="movie position-relative">
+                         <a [routerLink]="['/personDetails' , tv.id]">
+                              <img [src]="imgPrefix + tv.profile_path" class="w-100 py-3" [alt]="tv.name">
+                              <h2 class="h6">{{tv.name}}</h2>
+                         </a>
+                         <h2 class="text-center h6">Department : {{tv.known_for_department}}</h2>
+                         <p class=" text-muted text-left">{{tv.first_air_date}} </p>
+                         <span class="text-muted text-right"></span>
+                         <div class="vote bg-info">
+                              <span>{{tv.vote_average}}</span>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

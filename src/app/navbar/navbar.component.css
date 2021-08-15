@@ -1,0 +1,38 @@
+nav{
+     z-index: 99;
+     background-color: transparent;
+     position: fixed;
+     transition: .8s;
+}
+.navbar-brand{
+     font-family: "Montserrat", sans-serif;
+}
+.show{
+     background-color: #131722;
+     transition: 0.3s;
+     
+}
+
+.header_change{
+     background: #131722;
+     color: #fff;
+     transition: .5s background ;
+}
+
+
+@media screen and (max-width:991px) {
+
+     .social{
+          display: none;
+     }
+     .navbar-collapse.row{
+          flex-direction: column;
+          justify-content: center;
+     }
+     li{
+          padding: 5px;
+     }    
+     .login a{
+          font-size: 1.4rem;
+     }
+}
