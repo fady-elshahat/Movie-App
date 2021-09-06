@@ -1,7 +1,7 @@
 #eye{
-     position: relative;
-     bottom:37px;
-     left: 94%;
+     position: absolute;
+     top: 55%;
+     left: 95%;
      border: none;
      background-color: transparent;
      cursor: pointer;
@@ -12,6 +12,11 @@
      }
 }
 @media screen and (max-width:767px) {
+     #eye{
+          left: 90%;
+     }
+}
+@media screen and (max-width:470px) {
      #eye{
           left: 90%;
      }

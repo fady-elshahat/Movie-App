@@ -9,7 +9,7 @@
                          <p *ngIf='loginForm.get("email")?.errors?.email'>Email is Not Valid</p>
                     </div>
                </div>
-               <div class="form-group">
+               <div class="form-group position-relative">
                     <label for="passwordLogin">Password</label>
                     <input formControlName="password" id="passwordLogin" type="password" class="form-control">
                     <button (click)="eyePass()" type="button" id="eye"><i class="fas fa-eye"></i></button>

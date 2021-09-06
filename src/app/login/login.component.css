@@ -1,7 +1,7 @@
 #eye{
-     position: relative;
-     bottom:37px;
-     left: 93%;
+     position: absolute;
+     top: 55%;
+     left: 95%;
      border: none;
      background-color: transparent;
      cursor: pointer;
